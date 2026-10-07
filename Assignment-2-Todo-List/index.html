@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>To-Do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="todo">
-    <h2>My To-Do List</h2>
+    <div class="todo-container">
 
-    <input type="text" id="taskInput" placeholder="Enter task">
-    <button onclick="addTask()">Add Task</button>
+        <h1>My To-Do List</h1>
+        <p class="subtitle">Organize your tasks and stay productive ✨</p>
 
-    <ul id="taskList"></ul>
-</div>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
 
-<script src="script.js"></script>
+        <div class="task-info">
+            <span>Total Tasks: <b id="taskCount">0</b></span>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <p id="emptyMessage">No tasks yet. Add your first task! 📝</p>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

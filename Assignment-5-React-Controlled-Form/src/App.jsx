@@ -2,61 +2,107 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: ""
+  });
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-    return (
-        <div className="container">
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
-            <div className="form-box">
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-                <h1>Controlled React Form</h1>
+    alert("Form submitted successfully!");
+  };
 
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
+  return (
+    <div className="app">
 
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+      <div className="form-card">
 
-                <input
-                    type="text"
-                    placeholder="Enter your phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                />
+        <div className="header">
+          <div className="icon">📝</div>
+          <h1>Student Registration</h1>
+          <p>Enter your details below</p>
+        </div>
 
-                <div className="output">
+        <form onSubmit={handleSubmit}>
 
-                    <h2>Entered Data</h2>
+          <div className="input-group">
+            <label>Full Name</label>
 
-                    <p>
-                        <strong>Name:</strong> {name}
-                    </p>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter your name"
+            />
+          </div>
 
-                    <p>
-                        <strong>Email:</strong> {email}
-                    </p>
+          <div className="input-group">
+            <label>Email Address</label>
 
-                    <p>
-                        <strong>Phone:</strong> {phone}
-                    </p>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email"
+            />
+          </div>
 
-                </div>
+          <div className="input-group">
+            <label>Phone Number</label>
 
-            </div>
+            <input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="Enter your phone number"
+            />
+          </div>
+
+          <button type="submit">
+            Submit Details
+          </button>
+
+        </form>
+
+        <div className="preview">
+
+          <h2>Live Preview</h2>
+
+          <div className="preview-item">
+            <span>Name</span>
+            <strong>{formData.name || "Not entered"}</strong>
+          </div>
+
+          <div className="preview-item">
+            <span>Email</span>
+            <strong>{formData.email || "Not entered"}</strong>
+          </div>
+
+          <div className="preview-item">
+            <span>Phone</span>
+            <strong>{formData.phone || "Not entered"}</strong>
+          </div>
 
         </div>
-    );
+
+      </div>
+
+    </div>
+  );
 }
 
 export default App;

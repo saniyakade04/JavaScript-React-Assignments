@@ -1,30 +1,80 @@
+let taskInput = document.getElementById("taskInput");
+let taskList = document.getElementById("taskList");
+let taskCount = document.getElementById("taskCount");
+let emptyMessage = document.getElementById("emptyMessage");
+
 function addTask() {
 
-    let input = document.getElementById("taskInput");
-    let task = input.value.trim();
+    let taskText = taskInput.value.trim();
 
-    if (task === "") {
-        alert("Please enter a task");
+    if (taskText === "") {
+        alert("Please enter a task!");
         return;
     }
 
+    // Create task elements using DOM
     let li = document.createElement("li");
+    li.className = "task";
 
-    li.innerHTML = `
-        <span>${task}</span>
-        <button onclick="completeTask(this)">Complete</button>
-        <button onclick="deleteTask(this)">Delete</button>
-    `;
+    let span = document.createElement("span");
+    span.className = "task-text";
+    span.innerText = taskText;
 
-    document.getElementById("taskList").appendChild(li);
+    // Complete button
+    let completeButton = document.createElement("button");
+    completeButton.innerText = "✓ Done";
+    completeButton.className = "complete-btn";
 
-    input.value = "";
+    completeButton.onclick = function () {
+        span.classList.toggle("completed");
+    };
+
+    // Delete button
+    let deleteButton = document.createElement("button");
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "delete-btn";
+
+    deleteButton.onclick = function () {
+        li.remove();
+        updateTaskCount();
+    };
+
+    let buttons = document.createElement("div");
+    buttons.className = "task-buttons";
+
+    buttons.appendChild(completeButton);
+    buttons.appendChild(deleteButton);
+
+    li.appendChild(span);
+    li.appendChild(buttons);
+
+    taskList.appendChild(li);
+
+    taskInput.value = "";
+
+    updateTaskCount();
 }
 
-function completeTask(button) {
-    button.parentElement.classList.toggle("completed");
+
+function updateTaskCount() {
+
+    let count = taskList.children.length;
+
+    taskCount.innerText = count;
+
+    if (count === 0) {
+        emptyMessage.style.display = "block";
+    } else {
+        emptyMessage.style.display = "none";
+    }
 }
 
-function deleteTask(button) {
-    button.parentElement.remove();
-}
+
+// Add task when Enter key is pressed
+taskInput.addEventListener("keypress", function(event) {
+
+    if (event.key === "Enter") {
+        addTask();
+    }
+
+});

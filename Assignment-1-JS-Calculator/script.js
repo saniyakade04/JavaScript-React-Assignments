@@ -6,6 +6,11 @@ function calculate() {
 
     let result;
 
+    if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("result").innerText = "Enter numbers";
+        return;
+    }
+
     switch (operator) {
 
         case "+":
@@ -22,7 +27,7 @@ function calculate() {
 
         case "/":
             if (num2 === 0) {
-                result = "Cannot divide by zero";
+                result = "Cannot divide by 0";
             } else {
                 result = num1 / num2;
             }
@@ -32,6 +37,15 @@ function calculate() {
             result = "Invalid operator";
     }
 
-    document.getElementById("result").innerText =
-        "Result: " + result;
+    document.getElementById("result").innerText = result;
+}
+
+
+function clearCalculator() {
+
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("operator").value = "+";
+    document.getElementById("result").innerText = "0";
+
 }

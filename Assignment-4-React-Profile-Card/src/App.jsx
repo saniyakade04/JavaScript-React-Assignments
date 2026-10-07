@@ -1,37 +1,59 @@
 import "./App.css";
 
 function ProfileCard(props) {
-    return (
-        <div className="profile-card">
+  return (
+    <div className="profile-card">
 
-            <img
-                src={props.image}
-                alt={props.name}
-                className="profile-image"
-            />
+      <div className="profile-top">
+        <img
+          src={props.image}
+          alt={props.name}
+          className="profile-image"
+        />
+      </div>
 
-            <h2>{props.name}</h2>
+      <div className="profile-content">
 
-            <p>{props.description}</p>
+        <h1>{props.name}</h1>
 
+        <p className="role">{props.role}</p>
+
+        <p className="description">
+          {props.description}
+        </p>
+
+        <div className="info">
+          <span>📍 {props.location}</span>
+          <span>💻 {props.skill}</span>
         </div>
-    );
+
+        <button className="profile-btn">
+          View Profile
+        </button>
+
+      </div>
+
+    </div>
+  );
 }
 
 function App() {
-    return (
-        <div className="container">
+  return (
+    <div className="app">
 
-            <h1>React Profile Card</h1>
+      <h2 className="title">My Profile</h2>
 
-            <ProfileCard
-                name="Saniya Kade"
-                image="https://via.placeholder.com/150"
-                description="Computer Science student interested in web development, JavaScript and React."
-            />
+      <ProfileCard
+        name="Saniya Kade"
+        role="MCA Student"
+        description="Passionate about technology, web development and learning new skills."
+        location="India"
+        skill="Web Development"
+        image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400"
+      />
 
-        </div>
-    );
+    </div>
+  );
 }
 
 export default App;

@@ -1,43 +1,121 @@
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-    text-align: center;
-    padding: 50px;
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-.container h1 {
-    margin-bottom: 30px;
+.title {
+  color: white;
+  margin-bottom: 25px;
+  font-size: 28px;
 }
 
 .profile-card {
-    width: 350px;
-    margin: auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 360px;
+  overflow: hidden;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px);
+}
+
+.profile-top {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
 .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-bottom: -60px;
 }
 
-.profile-card h2 {
-    margin: 20px 0 10px;
+.profile-content {
+  padding: 75px 25px 25px;
+  text-align: center;
 }
 
-.profile-card p {
-    color: #555;
-    line-height: 1.6;
+.profile-content h1 {
+  color: #333;
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.role {
+  color: #667eea;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  background: #f5f6ff;
+  border-radius: 12px;
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.profile-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: #667eea;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-btn:hover {
+  background: #5568d9;
+}
+
+@media (max-width: 450px) {
+
+  .profile-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .app {
+    padding: 20px;
+  }
 }
