@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FSD Assignments | Saniya Kade</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .assignment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px;
+            margin-bottom: 15px;
+
+            background: #f7f7ff;
+            border-radius: 15px;
+
+            border-left: 5px solid #667eea;
+
+            transition: 0.3s;
+        }
+
+        .assignment:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .assignment-info {
+            flex: 1;
+        }
+
+        .assignment h3 {
+            color: #333;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .assignment p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .open-btn {
+            text-decoration: none;
+
+            padding: 10px 18px;
+
+            background: #667eea;
+            color: white;
+
+            border-radius: 9px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .open-btn:hover {
+            background: #5568d9;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+
+            border-top: 1px solid #eee;
+
+            color: #999;
+            font-size: 13px;
+        }
+
+        .tech {
+            margin-top: 8px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 25px 20px;
+            }
+
+            .assignment {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .open-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div class="header-icon">🚀</div>
+
+            <h1>FSD Assignments</h1>
+
+            <p class="subtitle">
+                JavaScript & React Projects
+            </p>
+
+        </div>
+
+
+        <!-- Assignment 1 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>🧮 Assignment 1 — JavaScript Calculator</h3>
+
+                <p>
+                    Basic arithmetic calculator using JavaScript,
+                    HTML and CSS.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-1-JS-Calculator/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Assignment 2 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>📝 Assignment 2 — DOM To-Do List</h3>
+
+                <p>
+                    Dynamic task management using DOM manipulation.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-2-DOM-Todo-List/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Assignment 3 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>📋 Assignment 3 — JavaScript Form Validation</h3>
+
+                <p>
+                    Registration form with JavaScript validation.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-3-JS-Form-Validation/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Assignment 4 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>👤 Assignment 4 — React Profile Card</h3>
+
+                <p>
+                    Profile card created using React Props.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-4-React-Profile-Card/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Assignment 5 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>📝 Assignment 5 — React Controlled Form</h3>
+
+                <p>
+                    Controlled form using React useState.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-5-React-Controlled-Form/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Assignment 6 -->
+
+        <div class="assignment">
+
+            <div class="assignment-info">
+
+                <h3>🔢 Assignment 6 — React Counter</h3>
+
+                <p>
+                    Interactive counter application using useState.
+                </p>
+
+            </div>
+
+            <a
+                href="./Assignment-6-React-Counter/"
+                class="open-btn">
+                Open
+            </a>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <p>
+                Created by <strong>Saniya Kade</strong>
+            </p>
+
+            <p class="tech">
+                HTML • CSS • JavaScript • React
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
